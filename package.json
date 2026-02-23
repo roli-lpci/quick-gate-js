@@ -1,0 +1,45 @@
+{
+  "name": "quick-gate",
+  "version": "0.2.0-alpha.1",
+  "description": "Deterministic quality gate CLI for Next.js with bounded auto-repair and escalation evidence",
+  "type": "module",
+  "bin": {
+    "quick-gate": "./src/cli.js"
+  },
+  "files": [
+    "src/",
+    "schemas/"
+  ],
+  "scripts": {
+    "test": "node --test 'test/*.test.js'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "Apache-2.0",
+  "author": "Hermes Labs <lpcisystems@gmail.com> (https://lpci.ai)",
+  "homepage": "https://lpci.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roli-lpci/quick-gate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roli-lpci/quick-gate/issues"
+  },
+  "keywords": [
+    "quality-gate",
+    "ci",
+    "lint",
+    "typecheck",
+    "lighthouse",
+    "nextjs",
+    "auto-repair",
+    "deterministic",
+    "eslint",
+    "typescript"
+  ],
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

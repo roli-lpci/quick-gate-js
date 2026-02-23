@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quick-gate.dev/schemas/agent-brief.schema.json",
+  "title": "Quick Gate Agent Brief",
+  "type": "object",
+  "required": [
+    "run_id",
+    "mode",
+    "status",
+    "priority_actions",
+    "retry_policy"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "canary",
+        "full"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "priority_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "action",
+          "scope",
+          "rationale"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "single_file",
+              "single_route",
+              "cross_route"
+            ]
+          },
+          "target_files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "retry_policy": {
+      "type": "object",
+      "required": [
+        "max_attempts",
+        "max_patch_lines",
+        "abort_on_no_improvement"
+      ],
+      "properties": {
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_patch_lines": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "abort_on_no_improvement": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "escalation": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "reason_code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

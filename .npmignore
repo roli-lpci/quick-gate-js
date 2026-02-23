@@ -1,0 +1,10 @@
+demo/
+test/
+docs/
+scripts/
+.git*
+.claude/
+.quick-gate/
+node_modules/
+*.md
+!README.md

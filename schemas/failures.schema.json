@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quick-gate.dev/schemas/failures.schema.json",
+  "title": "Quick Gate Failures",
+  "type": "object",
+  "required": [
+    "version",
+    "run_id",
+    "mode",
+    "status",
+    "timestamp",
+    "gates",
+    "findings"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "canary",
+        "full"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "repo": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "lint",
+              "typecheck",
+              "build",
+              "lighthouse"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "skipped"
+            ]
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "description": "Deterministic findings only. No inferred causes here.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "gate",
+          "severity",
+          "summary",
+          "actual",
+          "threshold",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "gate": {
+            "type": "string",
+            "enum": [
+              "lint",
+              "typecheck",
+              "build",
+              "lighthouse"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metric": {
+            "type": "string"
+          },
+          "actual": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "threshold": {
+            "type": [
+              "number",
+              "string"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "fail"
+            ]
+          },
+          "raw": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "inferred_hints": {
+      "description": "Optional model-generated hints; never treated as source of truth.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "hint",
+          "confidence"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string"
+          },
+          "hint": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+node_modules/
+.quick-gate/
+.DS_Store
+npm-debug.log*
+
+# Generated output (contains local system paths)
+demo/
+
+# Internal docs
+docs/market-research-report.md
