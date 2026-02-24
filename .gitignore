@@ -2,6 +2,8 @@ node_modules/
 .quick-gate/
 .DS_Store
 npm-debug.log*
+.npmrc
+*.tgz
 
 # Generated output (contains local system paths)
 demo/
