@@ -4,7 +4,7 @@
   "description": "Deterministic quality gate CLI for Next.js with bounded auto-repair and escalation evidence",
   "type": "module",
   "bin": {
-    "quick-gate": "./src/cli.js"
+    "quick-gate": "src/cli.js"
   },
   "files": [
     "src/",
@@ -21,10 +21,10 @@
   "homepage": "https://lpci.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/roli-lpci/quick-gate.git"
+    "url": "git+https://github.com/roli-lpci/quick-gate-js.git"
   },
   "bugs": {
-    "url": "https://github.com/roli-lpci/quick-gate/issues"
+    "url": "https://github.com/roli-lpci/quick-gate-js/issues"
   },
   "keywords": [
     "quality-gate",

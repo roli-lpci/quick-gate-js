@@ -111,7 +111,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: npm ci
-      - uses: roli-lpci/quick-gate/.github/actions/quick-gate@main
+      - uses: roli-lpci/quick-gate-js/.github/actions/quick-gate@main
         with:
           mode: canary
           repair: "true"

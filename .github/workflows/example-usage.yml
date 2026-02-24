@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Run Quick Gate
-        uses: roli-lpci/quick-gate/.github/actions/quick-gate@main
+        uses: roli-lpci/quick-gate-js/.github/actions/quick-gate@main
         with:
           mode: canary
           repair: "true"
