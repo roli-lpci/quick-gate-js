@@ -1,6 +1,6 @@
 {
   "name": "quick-gate",
-  "version": "0.2.0-alpha.2",
+  "version": "0.2.0",
   "description": "Deterministic quality gate CLI for TypeScript and ESLint projects with bounded auto-repair and escalation evidence",
   "type": "module",
   "bin": {
