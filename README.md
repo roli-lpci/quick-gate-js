@@ -1,12 +1,18 @@
 # Quick Gate
 
+[![npm version](https://img.shields.io/npm/v/quick-gate)](https://www.npmjs.com/package/quick-gate)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
+
 Deterministic quality gate CLI for Next.js repositories with bounded auto-repair and explicit escalation evidence.
 
 ## Quick Start
 
+Requires **Node.js >= 18** and a Next.js project with dependencies installed (`npm ci`).
+
 ```bash
 # From your Next.js project directory:
-npx quick-gate run --mode canary --changed-files <path-to-changed-files-list>
+npx quick-gate run --mode canary --changed-files <path>
 
 # Or install globally:
 npm install -g quick-gate
@@ -22,7 +28,7 @@ quick-gate run --mode canary --changed-files /tmp/changed.txt
 
 ## What It Does
 
-Quick Gate runs four deterministic quality gates on your Next.js project:
+Quick Gate runs up to four deterministic quality gates on your Next.js project. In **canary** mode (default): lint + typecheck + lighthouse. In **full** mode: all four including build.
 
 1. **lint** -- runs your ESLint config
 2. **typecheck** -- runs TypeScript compiler
@@ -74,7 +80,7 @@ Escalation reason codes: `NO_IMPROVEMENT`, `PATCH_BUDGET_EXCEEDED`, `ARCHITECTUR
 
 ## Model-Assisted Repair (Optional)
 
-Requires [Ollama](https://ollama.ai) installed locally. Without Ollama, Quick Gate still works -- it runs deterministic fixes only and escalates what it can't resolve.
+Requires [Ollama](https://ollama.com) installed locally. Without Ollama, Quick Gate still works -- it runs deterministic fixes only and escalates what it can't resolve.
 
 With Ollama:
 - **Hint model** (default: `qwen2.5:1.5b`): Generates repair hints

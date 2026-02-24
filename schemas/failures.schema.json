@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://quick-gate.dev/schemas/failures.schema.json",
+  "$id": "https://raw.githubusercontent.com/roli-lpci/quick-gate-js/main/schemas/failures.schema.json",
   "title": "Quick Gate Failures",
   "type": "object",
   "required": [

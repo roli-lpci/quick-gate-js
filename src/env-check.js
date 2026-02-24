@@ -30,7 +30,7 @@ export function checkEnvironment({ command }) {
   }
 
   if (command === 'repair' && !hasOllama()) {
-    warnings.push('Ollama not found -- running deterministic fixes only (eslint --fix). Install Ollama for model-assisted repair: https://ollama.ai');
+    warnings.push('Ollama not found -- running deterministic fixes only (eslint --fix). Install Ollama for model-assisted repair: https://ollama.com');
   }
 
   if (command === 'repair' && !hasRsync()) {

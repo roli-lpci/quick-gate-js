@@ -20,7 +20,7 @@ function parseArgs(argv) {
 }
 
 function usage() {
-  console.log(`Quick Gate v0.2.0-alpha
+  console.log(`Quick Gate v0.2.0-alpha.2
 
 Commands:
   quick-gate run --mode canary|full --changed-files <path>
