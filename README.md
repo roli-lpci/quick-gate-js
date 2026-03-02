@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/quick-gate)](https://www.npmjs.com/package/quick-gate)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
+[![CI](https://github.com/roli-lpci/quick-gate-js/actions/workflows/ci.yml/badge.svg)](https://github.com/roli-lpci/quick-gate-js/actions/workflows/ci.yml)
 
 Deterministic quality gate CLI for TypeScript and ESLint projects with bounded auto-repair and explicit escalation evidence. Works with Next.js, React, Vue, Svelte, Angular, or any Node.js project with TypeScript.
 

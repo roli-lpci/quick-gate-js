@@ -1,4 +1,4 @@
-# Example: Add this workflow to your Next.js repository to run Quick Gate on every PR.
+# Example: Add this workflow to your TypeScript/ESLint repository to run Quick Gate on every PR.
 # Copy this file to .github/workflows/quick-gate.yml in your project.
 
 name: Quick Gate

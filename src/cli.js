@@ -1,10 +1,14 @@
 #!/usr/bin/env node
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { loadChangedFiles } from './fs-utils.js';
 import { executeRun } from './run-command.js';
 import { executeSummarize } from './summarize-command.js';
 import { executeRepair } from './repair-command.js';
 import { checkEnvironment, hasOllama } from './env-check.js';
+
+const require = createRequire(import.meta.url);
+const { version } = require('../package.json');
 
 function parseArgs(argv) {
   const args = {};
@@ -20,7 +24,7 @@ function parseArgs(argv) {
 }
 
 function usage() {
-  console.log(`Quick Gate v0.2.0
+  console.log(`Quick Gate v${version}
 
 Commands:
   quick-gate run --mode canary|full --changed-files <path>

@@ -1,5 +1,5 @@
 name: Quick Gate
-description: Run deterministic quality gates on a Next.js project and optionally auto-repair lint/type failures.
+description: Run deterministic quality gates on a TypeScript/ESLint project and optionally auto-repair lint/type failures.
 author: Hermes Labs
 
 inputs:
